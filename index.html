@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة فجر المهارة | لتجهيز المعارض والمناسبات</title>
+    <!-- استيراد خطوط جوجل والأيقونات -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #63171d; /* لون عنابي ملكي فخم للمناسبات والمعارض */
+            --dark-color: #1a1a1a;
+            --text-color: #333333;
+            --light-bg: #fdfdfd;
+            --card-bg: #ffffff;
+            --border-color: #eaeaea;
+            --whatsapp-color: #25D366;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            letter-spacing: -0.3px;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        /* الهيدر */
+        header {
+            background: rgba(250, 250, 250, 0.95);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* الواجهة الرئيسية */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('image_582a47.jpg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 35px;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        /* أزرار تفاعلية */
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 23, 29, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #491014;
+            transform: translateY(-2px);
+        }
+
+        /* الأقسام العامة */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        /* خدمات التجهيز والفعاليات */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+            border-color: var(--primary-color);
+        }
+
+        .service-card i {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* قسم قائمة مستلزمات التأجير التفصيلي */
+        .rental-catalog-section {
+            background-color: #f7f7f7;
+            padding: 90px 20px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .catalog-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 4px;
+            border-right: 4px solid var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .catalog-item h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .catalog-item p {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* الفلسفة التعبيرية */
+        .quote-section {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* معرض الأعمال */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            height: 280px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(26, 26, 26, 0.9);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* التذييل والتواصل */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 35px;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        .whatsapp-container {
+            margin-top: 20px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 16px 45px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1eaf52;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn i {
+            margin-left: 10px;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            section { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="logo">مؤسسة فجر المهارة</div>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
+    <section class="hero" style="padding: 0; max-width: 100%;">
+        <h1>مؤسسة فجر المهارة</h1>
+        <p>التميز والاحترافية في تنظيم وتجهيز المعارض، المؤتمرات، والمناسبات الرسمية والخاصة بكافة أنحاء المملكة بأعلى مستويات الجودة.</p>
+        <a href="https://wa.me/966537224298" class="btn btn-primary" target="_blank">طلب خدمات التجهيز والحجز</a>
+    </section>
+
+    <!-- الخدمات الرئيسية -->
+    <section id="services">
+        <h2 class="section-title">تجهيز الفعاليات والمؤتمرات</h2>
+        <p class="section-subtitle">حلول متكاملة تغطي كافة متطلبات المحافل الكبرى والمناسبات الوطنية والرسمية</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-building-columns"></i>
+                <h3>تجهيز المعارض والمؤتمرات</h3>
+                <p>تغطية شاملة ومتقنة لكافة الفعاليات الحكومية، أجنحة المعارض، المؤتمرات الكبرى، والاحتفالات الوطنية.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-couch"></i>
+                <h3>تأجير أثاث الفعاليات الفاخر</h3>
+                <p>نوفر تشكيلة واسعة من الأثاث المودرن الفخم، الكنبات الفردية والثلاثية، والقطع التزيينية الراقية.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>الخدمات اللوجستية الفنية</h3>
+                <p>إشراف فني كامل يشمل عمليات النقل، التركيب، التنظيف والتسليم الدقيق في المواعيد المحددة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفلسفة -->
+    <div class="quote-section">
+        "لأن التفاصيل تصنع الفرق؛ نلتزم بتقديم نتائج متميزة تفوق التوقعات"
+    </div>
+
+    <!-- قسم مستلزمات التأجير التفصيلي بناءً على الكتالوج والمرفقات -->
+    <section class="rental-catalog-section" style="max-width: 100%;">
+        <div class="catalog-container">
+            <h2 class="section-title">مستلزمات التأجير والتجهيز</h2>
+            <p class="section-subtitle">نوفر كافة التجهيزات المذكورة في المرفقات والكتالوج بجودة فخمة ومظهر مثالي</p>
+            
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <h4>الكنبات الفاخرة</h4>
+                    <p>كنبات مودرن مفردة بألوان راقية (أبيض، رمادي، أسود)، وكنبات ثلاثية للمنصات الرئيسية وقاعات كبار الشخصيات.</p>
+                </div>
+                <div class="catalog-item">
+                    <h4>الكراسي بجميع أنواعها</h4>
+                    <p>كراسي المؤتقرات المبطنة الفاخرة، كراسي المكاتب المتحركة، كراسي البار المرتفعة بتصاميمها الحديثة.</p>
+                </div>
+                <div class="catalog-item">
+                    <h4>الطاولات المتنوعة</h4>
+                    <p>طاولات اجتماعات ضخمة، طاولات مستديرة مغطاة للمناسبات، طاولات بار زجاجية وخشبية، وطاولات تقديم شاي وقهوة مرخمة.</p>
+                </div>
+                <div class="catalog-item">
+                    <h4>المكيفات وأنظمة التدفئة</h4>
+                    <p>تأجير وتجهيز المكيفات للمساحات المفتوحة، ومشبات وفوانيس التدفئة الخارجية الفاخرة المخصصة للأجواء المفتوحة.</p>
+                </div>
+                <div class="catalog-item">
+                    <h4>الستائر الفاخرة والساتر</h4>
+                    <p>تركيب وتجهيز الستائر الساترة الطويلة والبيضاء للممرات، الغرف المؤقتة، والمنصات الرئيسية بديكورات أنيقة.</p>
+                </div>
+                <div class="catalog-item">
+                    <h4>الجلسات التراثية والخارجية</h4>
+                    <p>تأجير الجلسات الأرضية التراثية الفخمة المتكاملة مع السجاد الأحمر والنقوش التقليدية للمناسبات الخارجية والاحتفالات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض الأعمال البصري -->
+    <section id="gallery">
+        <h2 class="section-title">من واقع أعمالنا</h2>
+        <p class="section-subtitle">جانب من تجهيزاتنا الميدانية للمحافل الرسمية والمناسبات الخاصة بالصور المرفقة في الكتالوج</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="D:\party\ax.jpeg" alt="تجهيز قاعات كبرى">
+                <div class="gallery-caption">تجهيز قاعات المؤتمرات والاجتماعات الضخمة بالكراسي الفاخرة</div>
+            </div>
+            <div class="gallery-item">
+                <img src="D:\party\ar.jpeg" alt="تنفيذ مناسبات رسمية">
+                <div class="gallery-caption">تنفيذ المنصات الخلفية الفاخرة والاحتفالات الرسمية ولقوات أمن المنشآت</div>
+            </div>
+            <div class="gallery-item">
+                <img src="D:\party\ae.jpeg" alt="تجهيز جلسات تراثية خارجية">
+                <div class="gallery-caption">تجهيز المواقع المفتوحة بالجلسات التراثية الفاخرة ومشبات التدفئة</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل والتواصل المباشر -->
+    <footer>
+        <div class="contact-info">
+            <p style="margin-bottom: 15px;"><i class="fa-solid fa-location-dot" style="color: var(--primary-color); margin-left: 8px;"></i> الرياض، المملكة العربية السعودية</p>
+            <p>مؤسسة فجر المهارة - شريككم الموثوق لتنفيذ وتجهيز أبهى المناسبات</p>
+        </div>
+        
+        <!-- زر الواتساب التفاعلي الذكي والوحيد -->
+        <div class="whatsapp-container">
+            <a href="https://wa.me/966537224298" class="whatsapp-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> تواصل معنا مباشرة: 0537224298
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
